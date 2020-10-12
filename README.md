@@ -19,8 +19,8 @@ Env:
 * WEB_CONCURRENCY=2
 * RAILS_MAX_THREADS=2
 * RAILS_MIN_THREADS=2
-* XIM_DATABASE_URL=postgres://xim:1@172.16.23.20:5432/xim
-* XIM_REDIS_URL=redis://password@localhost:6379/15
+* XIM_DATABASE_URL=postgres://user:password@localhost:5432/database
+* XIM_REDIS_URL=redis://:password@localhost:6379/15
 * XIM_REDIS_POOL=2
 * XIM_BUNNY_URL=amqp://guest:guest@localhost:5672/
 
