@@ -21,6 +21,14 @@ Env:
 * RAILS_MIN_THREADS=2
 * XIM_DATABASE_URL=postgres://xim:1@172.16.23.20:5432/xim
 * XIM_REDIS_URL=redis://password@localhost:6379/15
+* XIM_REDIS_POOL=2
 * XIM_BUNNY_URL=amqp://guest:guest@localhost:5672/
 
 Хотелось это все запихнуть в докер, но уже времени недостаточно
+
+Установка:
+* bundle install
+* bundle exec rails webpacker:install
+* bundle exec rails webpacker:install:erb
+* bundle exec rails webpacker:install:react
+* bundle exec rails assets:precompile
