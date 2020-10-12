@@ -75,25 +75,26 @@ export default class Aircrafts extends Component {
   }
 
   render() {
+    var addBtn = (<></>)
+    if (!this.props.history) {
+      if (this.state.loadingAdd) {
+        addBtn = <LoadingSpinner small={true}/>
+      } else {
+        addBtn = <button className="btn btn-warning"
+                         onClick={this.handleAddAircraft}>{I18n.t('button_add_aircraft')}</button>
+      }
+    }
+
     if (this.state.loading) {
       return <LoadingSpinner align="center"/>
     } else if (!this.state.aircrafts || !this.state.aircrafts.length) {
       return (
           <div className="alert alert-warning" role="alert">
             {I18n.t('label_no_aircrafts')}
+            <p className="mt-3">{addBtn}</p>
           </div>
       );
     } else {
-      var addBtn = (<></>)
-      if (!this.props.history) {
-        if (this.state.loadingAdd) {
-          addBtn = <LoadingSpinner small={true}/>
-        } else {
-          addBtn = <button className="btn btn-warning"
-                           onClick={this.handleAddAircraft}>{I18n.t('button_add_aircraft')}</button>
-        }
-      }
-
       return (
           <>
             <div className="mb-3">
